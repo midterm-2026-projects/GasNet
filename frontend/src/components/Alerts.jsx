@@ -1,4 +1,4 @@
-import './alerts.css'
+import '../styles/alerts.css'
 
 export default function Alerts() {
   return (

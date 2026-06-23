@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { fetchSyncStatus } from '../services/api'
-import './syncStatus.css'
+import '../styles/syncStatus.css'
 
 function formatDate(iso) {
   if (!iso) return 'N/A'

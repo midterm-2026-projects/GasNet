@@ -1,6 +1,6 @@
 import React from 'react'
 import SyncStatus from './SyncStatus'
-import './sidebar.css'
+import '../styles/sidebar.css'
 
 export default function Sidebar() {
   return (

@@ -1,4 +1,4 @@
-import './metricCard.css'
+import '../styles/metricCard.css'
 
 export default function MetricCard({ title, value, delta }) {
   return (

@@ -1,6 +1,6 @@
 import MetricCard from './MetricCard'
 import Alerts from './Alerts'
-import './analytics.css'
+import '../styles/analytics.css'
 
 export default function Analytics() {
   return (
