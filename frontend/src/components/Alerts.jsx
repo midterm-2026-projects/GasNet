@@ -1,4 +1,3 @@
-import React from 'react'
 import './alerts.css'
 
 export default function Alerts() {

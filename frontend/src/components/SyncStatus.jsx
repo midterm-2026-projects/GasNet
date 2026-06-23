@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchSyncStatus } from '../services/api'
 import './syncStatus.css'
 
@@ -25,7 +25,7 @@ export default function SyncStatus() {
         setStatus(data)
         setError(null)
       })
-      .catch((err) => {
+      .catch(() => {
         if (!mounted) return
         setError('Unable to load status')
       })

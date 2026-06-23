@@ -1,4 +1,3 @@
-import React from 'react'
 import MetricCard from './MetricCard'
 import Alerts from './Alerts'
 import './analytics.css'

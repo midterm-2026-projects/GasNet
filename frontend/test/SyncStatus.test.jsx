@@ -17,7 +17,7 @@ describe('SyncStatus component', () => {
   it('displays sync info from API', async () => {
     render(<SyncStatus />)
     await waitFor(() => expect(screen.getByTestId('sync-indicator').textContent).toBe('synchronized'))
-    expect(screen.getByTestId('last-sync').textContent).toBe(mockResponse.lastSync)
+    expect(screen.getByTestId('last-sync').textContent).toBe(new Date(mockResponse.lastSync).toLocaleString())
     expect(screen.getByTestId('connection-status').textContent).toBe('online')
   })
 })

@@ -1,0 +1,19 @@
+import { fetchSyncStatus } from './api'
+import { vi, describe, global, afterEach, expect, it } from 'vitest'
+
+describe('fetchSyncStatus', () => {
+  const OLD = globalThis.fetch
+  afterEach(() => { globalThis.fetch = OLD })
+
+  it('returns json when response ok', async () => {
+    const payload = { syncStatus: 'synchronized' }
+    global.fetch = vi.fn(() => Promise.resolve({ ok: true, json: () => Promise.resolve(payload) }))
+    const res = await fetchSyncStatus()
+    expect(res).toEqual(payload)
+  })
+
+  it('throws on network error', async () => {
+    global.fetch = vi.fn(() => Promise.resolve({ ok: false }))
+    await expect(fetchSyncStatus()).rejects.toThrow()
+  })
+})

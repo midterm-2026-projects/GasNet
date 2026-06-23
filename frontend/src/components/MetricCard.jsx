@@ -1,4 +1,3 @@
-import React from 'react'
 import './metricCard.css'
 
 export default function MetricCard({ title, value, delta }) {
