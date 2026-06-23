@@ -9,4 +9,13 @@ describe('MetricCard', () => {
     expect(screen.getByText('42')).toBeInTheDocument()
     expect(screen.getByText('+1')).toBeInTheDocument()
   })
+
+  it('renders default values when no data provided', () => {
+    const { container } = render(<MetricCard />)
+    // default title and value
+    expect(screen.getByText('No Data')).toBeInTheDocument()
+    expect(screen.getByText('0')).toBeInTheDocument()
+    // delta should not be rendered
+    expect(container.querySelector('.metric-delta')).toBeNull()
+  })
 })
