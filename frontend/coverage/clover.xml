@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1782191102233" clover="3.2.0">
+  <project timestamp="1782191102234" name="All files">
+    <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5" elements="14" coveredelements="14" complexity="0" loc="9" ncloc="9" packages="1" files="3" classes="3"/>
+    <file name="InventoryStatus.jsx" path="C:\Users\Iladio\OneDrive\Documents\All Activity\Summer Class\Testin_week1_2\frontend\src\components\InventoryStatus.jsx">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="2" count="3" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="21" count="9" type="stmt"/>
+    </file>
+    <file name="StockLevelChanges.jsx" path="C:\Users\Iladio\OneDrive\Documents\All Activity\Summer Class\Testin_week1_2\frontend\src\components\StockLevelChanges.jsx">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="2" count="5" type="stmt"/>
+      <line num="23" count="5" type="stmt"/>
+      <line num="39" count="15" type="stmt"/>
+      <line num="41" count="15" type="stmt"/>
+    </file>
+    <file name="SynchronizationIndicators.jsx" path="C:\Users\Iladio\OneDrive\Documents\All Activity\Summer Class\Testin_week1_2\frontend\src\components\SynchronizationIndicators.jsx">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="4" type="stmt"/>
+      <line num="8" count="4" type="stmt"/>
+    </file>
+  </project>
+</coverage>
