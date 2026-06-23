@@ -3,11 +3,11 @@ import { render, screen } from '@testing-library/react'
 import { vi } from 'vitest'
 
 // Mock SyncStatus inside Sidebar to avoid network calls
-vi.mock('./SyncStatus', () => ({
+vi.mock('../src/components/SyncStatus', () => ({
   default: () => <div data-testid="mock-sync">Mock Sync</div>
 }))
 
-import Sidebar from './Sidebar'
+import Sidebar from '../src/components/Sidebar'
 
 describe('Sidebar', () => {
   it('renders brand, nav and alerts', () => {

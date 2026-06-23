@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import MetricCard from './MetricCard'
+import MetricCard from '../src/components/MetricCard'
 import { describe, expect, it } from 'vitest'
 
 describe('MetricCard', () => {

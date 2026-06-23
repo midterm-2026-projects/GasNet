@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Alerts from './Alerts'
+import Alerts from '../src/components/Alerts'
 import { describe, expect, it } from 'vitest'
 
 

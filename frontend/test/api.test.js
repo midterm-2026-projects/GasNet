@@ -1,5 +1,5 @@
-import { fetchSyncStatus } from './api'
-import { vi, describe, global, afterEach, expect, it } from 'vitest'
+import { fetchSyncStatus } from '../src/services/api'
+import { vi, describe, afterEach, expect, it } from 'vitest'
 
 describe('fetchSyncStatus', () => {
   const OLD = globalThis.fetch

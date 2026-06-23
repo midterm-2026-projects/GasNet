@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
-import SyncStatus from './SyncStatus'
+import SyncStatus from '../src/components/SyncStatus'
 import { vi, describe, it, beforeEach, expect } from 'vitest'
 
 describe('SyncStatus component', () => {
@@ -11,7 +11,7 @@ describe('SyncStatus component', () => {
   }
 
   beforeEach(() => {
-    global.fetch = vi.fn(() => Promise.resolve({ ok: true, json: () => Promise.resolve(mockResponse) }))
+    globalThis.fetch = vi.fn(() => Promise.resolve({ ok: true, json: () => Promise.resolve(mockResponse) }))
   })
 
   it('displays sync info from API', async () => {

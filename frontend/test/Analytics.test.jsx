@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Analytics from './Analytics'
+import Analytics from '../src/components/Analytics'
 import { describe, expect, it } from 'vitest'
 
 describe('Analytics', () => {
