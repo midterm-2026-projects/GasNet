@@ -1,13 +1,5 @@
-import InventoryStatus from "./components/InventoryStatus";
-import StockLevelChanges from "./components/StockLevelChanges";
-import SynchronizationIndicators from "./components/SynchronizationIndicators";
+import InventoryMonitoringInterface from "./components/InventoryMonitoringInterface";
 
 export default function App() {
-  return (
-  <>
-  <InventoryStatus />,
-  <StockLevelChanges />,
-  <SynchronizationIndicators/>
-  </>);
+  return <InventoryMonitoringInterface />;
 }
-

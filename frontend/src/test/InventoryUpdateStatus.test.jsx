@@ -1,23 +1,25 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import InventoryStatus from "../components/InventoryStatus";
+import InventoryMonitoringInterface from "../components/InventoryMonitoringInterface";
 
-describe("InventoryStatus", () => {
-  it("should display the inventory update status title", () => {
+describe("Inventory Update Status", () => {
+  it("should display the inventory synchronization monitoring interface title", () => {
     // Arrange
-    render(<InventoryStatus />);
+    render(<InventoryMonitoringInterface />);
 
     // Act
-    
+  
 
     // Assert
-    expect(screen.getByText("Inventory Update Status")).toBeInTheDocument();
+    expect(
+      screen.getByText("Inventory Synchronization Monitoring Interface")
+    ).toBeInTheDocument();
   });
 
   it("should display product names correctly", () => {
     // Arrange
-    render(<InventoryStatus />);
+    render(<InventoryMonitoringInterface />);
 
     // Act
     
@@ -30,7 +32,7 @@ describe("InventoryStatus", () => {
 
   it("should display inventory update statuses correctly", () => {
     // Arrange
-    render(<InventoryStatus />);
+    render(<InventoryMonitoringInterface />);
 
     // Act
     
