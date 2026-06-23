@@ -1,6 +1,5 @@
-import React from 'react'
 import { render, screen } from '@testing-library/react'
-import { vi } from 'vitest'
+import { vi, describe, expect, it } from 'vitest'
 
 // Mock SyncStatus inside Sidebar to avoid network calls
 vi.mock('../src/components/SyncStatus', () => ({

@@ -7,13 +7,13 @@ describe('fetchSyncStatus', () => {
 
   it('returns json when response ok', async () => {
     const payload = { syncStatus: 'synchronized' }
-    global.fetch = vi.fn(() => Promise.resolve({ ok: true, json: () => Promise.resolve(payload) }))
+    globalThis.fetch = vi.fn(() => Promise.resolve({ ok: true, json: () => Promise.resolve(payload) }))
     const res = await fetchSyncStatus()
     expect(res).toEqual(payload)
   })
 
   it('throws on network error', async () => {
-    global.fetch = vi.fn(() => Promise.resolve({ ok: false }))
+    globalThis.fetch = vi.fn(() => Promise.resolve({ ok: false }))
     await expect(fetchSyncStatus()).rejects.toThrow()
   })
 })

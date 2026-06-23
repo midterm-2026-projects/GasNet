@@ -18,7 +18,6 @@ export default function SyncStatus() {
 
   useEffect(() => {
     let mounted = true
-    setLoading(true)
     fetchSyncStatus()
       .then((data) => {
         if (!mounted) return

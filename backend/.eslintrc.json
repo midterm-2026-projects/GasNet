@@ -1,0 +1,14 @@
+{
+  "env": {
+    "node": true,
+    "es2021": true,
+    "jest": true
+  },
+  "globals": {
+    "describe": "readonly",
+    "it": "readonly",
+    "expect": "readonly"
+  },
+  "extends": ["eslint:recommended"],
+  "rules": {}
+}

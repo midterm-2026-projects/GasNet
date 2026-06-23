@@ -1,4 +1,3 @@
-import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import SyncStatus from '../src/components/SyncStatus'
 import { vi, describe, it, beforeEach, expect } from 'vitest'

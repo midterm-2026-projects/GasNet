@@ -1,4 +1,3 @@
-import React from 'react'
 import SyncStatus from './SyncStatus'
 import '../styles/sidebar.css'
 
