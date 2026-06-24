@@ -1,5 +1,7 @@
 import InventoryMonitoringInterface from "./components/InventoryMonitoringInterface";
 
-export default function App() {
+function App() {
   return <InventoryMonitoringInterface />;
 }
+
+export default App;

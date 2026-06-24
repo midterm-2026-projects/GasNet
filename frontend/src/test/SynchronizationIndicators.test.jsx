@@ -1,41 +1,56 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import InventoryMonitoringInterface from "../components/InventoryMonitoringInterface";
+import SynchronizationIndicators from "../components/SynchronizationIndicators";
 
-describe("Synchronization Indicators", () => {
-  it("should display synchronization status correctly", () => {
+describe("SynchronizationIndicators Component", () => {
+  it("should display the synchronization indicators title", () => {
     // Arrange
-    render(<InventoryMonitoringInterface />);
+    const syncData = {
+      syncStatus: "Synced",
+      deviceConnection: "Online",
+      lastSynced: "June 23, 2026 11:30 AM",
+    };
+
+    render(<SynchronizationIndicators syncData={syncData} />);
 
     // Act
-    
+  
 
     // Assert
-    expect(screen.getAllByText("Synced").length).toBeGreaterThan(0);
+    expect(screen.getByText("Synchronization Indicators")).toBeInTheDocument();
   });
 
-  it("should display device connection status correctly", () => {
+  it("should display overall sync status and device connection correctly", () => {
     // Arrange
-    render(<InventoryMonitoringInterface />);
+    const syncData = {
+      syncStatus: "Synced",
+      deviceConnection: "Online",
+      lastSynced: "June 23, 2026 11:30 AM",
+    };
+
+    render(<SynchronizationIndicators syncData={syncData} />);
 
     // Act
     
-
     // Assert
-    expect(screen.getAllByText("Online").length).toBeGreaterThan(0);
+    expect(screen.getByText("Synced")).toBeInTheDocument();
+    expect(screen.getByText("Online")).toBeInTheDocument();
   });
 
-  it("should display last synced timestamp correctly", () => {
+  it("should display the last synced timestamp correctly", () => {
     // Arrange
-    render(<InventoryMonitoringInterface />);
+    const syncData = {
+      syncStatus: "Synced",
+      deviceConnection: "Online",
+      lastSynced: "June 23, 2026 11:30 AM",
+    };
+
+    render(<SynchronizationIndicators syncData={syncData} />);
 
     // Act
-    
 
     // Assert
-    expect(
-      screen.getAllByText("June 23, 2026 11:30 AM").length
-    ).toBeGreaterThan(0);
+    expect(screen.getByText("June 23, 2026 11:30 AM")).toBeInTheDocument();
   });
 });
