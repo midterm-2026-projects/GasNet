@@ -43,7 +43,6 @@ This objective also supports the other project objectives by:
 ## Week 1
 
 ### Day 1 — Transaction Synchronization Status Interface
-**Task Description**
 Build a user interface that displays the synchronization status of transaction data across devices.
 
 **Sub-Tasks**
