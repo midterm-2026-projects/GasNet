@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 
-import ConnectionStatus from "../../components/week1/ConnectionStatus";
+import ConnectionStatus from "../../../components/week1/Day1/ConnectionStatus";
 
 describe("ConnectionStatus Component", () => {
   it("should display connection status accurately", () => {
