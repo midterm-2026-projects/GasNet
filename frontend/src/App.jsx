@@ -5,7 +5,8 @@ import CrossDeviceReportsInterface from "./components/week2/Day2/CrossDeviceRepo
 
 function App() {
   return (
-    <>
+    <><TransactionSynchronizationInterface />,
+    <InventoryMonitoringInterface/>,
       <CrossDeviceReportsInterface/>
     </>
   );

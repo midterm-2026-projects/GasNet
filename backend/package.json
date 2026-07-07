@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "type": "commonjs",
   "scripts": {
-    "start": "node src/index.js",
-    "test": "vitest --globals",
+     "dev": "node src/routes/index.js",
+    "start": "node src/routes/index.js",
+    "test": "vitest",
     "test:watch": "vitest --watch --globals",
     "test:jest": "jest --runInBand",
     "test:unit": "npm run test:jest",
     "lint": "eslint ."
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "express": "^4.18.2"
   },
   "devDependencies": {

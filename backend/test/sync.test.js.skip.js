@@ -1,5 +1,5 @@
 const request = require('supertest')
-const app = require('../src/index.js')
+const app = require("../src/routes/index.js");
 
 describe('GET /api/sync-status', () => {
   it('returns sync status payload', async () => {
