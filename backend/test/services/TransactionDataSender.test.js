@@ -1,4 +1,5 @@
-const TransactionDataSender = require("../../src/services/TransactionDataSender");
+import { describe, test, expect } from "vitest";
+import TransactionDataSender from "../../src/services/TransactionDataSender.js";
 
 describe("TransactionDataSender", () => {
   test("should send transaction data successfully", () => {

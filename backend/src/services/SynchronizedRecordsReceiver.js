@@ -18,4 +18,4 @@ class SynchronizedRecordsReceiver {
   }
 }
 
-module.exports = SynchronizedRecordsReceiver;
+export default SynchronizedRecordsReceiver;

@@ -1,4 +1,5 @@
-const SynchronizedRecordsReceiver = require("../../src/services/SynchronizedRecordsReceiver");
+import { describe, test, expect } from "vitest";
+import SynchronizedRecordsReceiver from "../../src/services/SynchronizedRecordsReceiver.js";
 
 describe("SynchronizedRecordsReceiver", () => {
   test("should receive synchronized records correctly", () => {

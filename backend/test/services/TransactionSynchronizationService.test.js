@@ -1,4 +1,5 @@
-const TransactionSynchronizationService = require("../../src/services/TransactionSynchronizationService");
+import { describe, test, expect } from "vitest";
+import TransactionSynchronizationService from "../../src/services/TransactionSynchronizationService.js";
 
 describe("TransactionSynchronizationService", () => {
   test("should synchronize transaction successfully", () => {

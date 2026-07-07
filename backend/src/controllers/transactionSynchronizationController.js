@@ -1,5 +1,5 @@
 //week3-day1
-const TransactionSynchronizationService = require("../services/TransactionSynchronizationService");
+import TransactionSynchronizationService from "../services/TransactionSynchronizationService.js";
 
 class TransactionSynchronizationController {
   constructor() {
@@ -29,4 +29,4 @@ class TransactionSynchronizationController {
   }
 }
 
-module.exports = new TransactionSynchronizationController();
+export default new TransactionSynchronizationController();

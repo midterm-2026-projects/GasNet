@@ -1,7 +1,7 @@
 //week3-day1
-const TransactionDataSender = require("./TransactionDataSender");
-const SynchronizedRecordsReceiver = require("./SynchronizedRecordsReceiver");
-const TransactionSynchronizationValidator = require("./TransactionSynchronizationValidator");
+import TransactionDataSender from "./TransactionDataSender.js";
+import SynchronizedRecordsReceiver from "./SynchronizedRecordsReceiver.js";
+import TransactionSynchronizationValidator from "./TransactionSynchronizationValidator.js";
 
 class TransactionSynchronizationService {
   constructor() {
@@ -25,4 +25,4 @@ class TransactionSynchronizationService {
   }
 }
 
-module.exports = TransactionSynchronizationService;
+export default TransactionSynchronizationService;

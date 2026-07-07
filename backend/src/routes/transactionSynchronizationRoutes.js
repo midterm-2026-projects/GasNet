@@ -1,12 +1,12 @@
 //week3-day1
-const express = require("express");
-const router = express.Router();
+import express from "express";
+import transactionSynchronizationController from "../controllers/transactionSynchronizationController.js";
 
-const transactionSynchronizationController = require("../controllers/transactionSynchronizationController");
+const router = express.Router();
 
 router.post(
   "/transactions/synchronize",
   transactionSynchronizationController.synchronizeTransaction
 );
 
-module.exports = router;
+export default router;

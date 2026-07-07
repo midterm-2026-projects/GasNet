@@ -1,4 +1,5 @@
-const TransactionSynchronizationValidator = require("../../src/services/TransactionSynchronizationValidator");
+import { describe, test, expect } from "vitest";
+import TransactionSynchronizationValidator from "../../src/services/TransactionSynchronizationValidator.js";
 
 describe("TransactionSynchronizationValidator", () => {
   test("should validate synchronized transactions accurately", () => {

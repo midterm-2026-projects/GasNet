@@ -1,6 +1,5 @@
-const express = require("express");
-
-const transactionSynchronizationRoutes = require("./transactionSynchronizationRoutes");
+import express from "express";
+import transactionSynchronizationRoutes from "./transactionSynchronizationRoutes.js";
 
 const app = express();
 
@@ -14,4 +13,4 @@ app.get("/", (req, res) => {
 
 app.use("/api", transactionSynchronizationRoutes);
 
-module.exports = app;
+export default app;

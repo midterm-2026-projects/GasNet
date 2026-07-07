@@ -11,4 +11,4 @@ class TransactionSynchronizationValidator {
   }
 }
 
-module.exports = TransactionSynchronizationValidator;
+export default TransactionSynchronizationValidator;

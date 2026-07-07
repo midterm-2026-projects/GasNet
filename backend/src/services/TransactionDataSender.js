@@ -9,4 +9,4 @@ class TransactionDataSender {
   }
 }
 
-module.exports = TransactionDataSender;
+export default TransactionDataSender;
