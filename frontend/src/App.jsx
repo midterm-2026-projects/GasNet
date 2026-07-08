@@ -1,10 +1,10 @@
-import BranchPerformanceAnalysisInterface from "./components/week3/Day2/BranchPerformanceAnalysisInterface";
+import SalesAnalyticsProcessingInterface from "./components/week3/Day1/SalesAnalyticsProcessingInterface";
 
 
 function App() {
   return (
     <>
-    <BranchPerformanceAnalysisInterface/>
+      <SalesAnalyticsProcessingInterface/>
     </>
   );
 }
