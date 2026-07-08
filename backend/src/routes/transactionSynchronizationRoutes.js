@@ -1,12 +1,11 @@
-//week3-day1
 import express from "express";
-import transactionSynchronizationController from "../controllers/transactionSynchronizationController.js";
+import synchronizeTransactionController from "../controllers/transactionSynchronizationController.js";
 
 const router = express.Router();
 
 router.post(
   "/transactions/synchronize",
-  transactionSynchronizationController.synchronizeTransaction
+  synchronizeTransactionController
 );
 
 export default router;

@@ -1,14 +1,12 @@
 //week3-day1
-class TransactionSynchronizationValidator {
-  validate(records) {
-    return records.every(
-      (record) =>
-        record.transactionId &&
-        record.product &&
-        record.quantity > 0 &&
-        record.status === "Synchronized"
-    );
-  }
+function validateSynchronizedRecords(records) {
+  return records.every(
+    (record) =>
+      record.transactionId &&
+      record.product &&
+      record.quantity > 0 &&
+      record.status === "Synchronized"
+  );
 }
 
-export default TransactionSynchronizationValidator;
+export default validateSynchronizedRecords;

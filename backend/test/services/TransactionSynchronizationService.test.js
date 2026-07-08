@@ -1,11 +1,10 @@
+//week3-day1
 import { describe, test, expect } from "vitest";
-import TransactionSynchronizationService from "../../src/services/TransactionSynchronizationService.js";
+import synchronizeTransaction from "../../src/services/TransactionSynchronizationService.js";
 
 describe("TransactionSynchronizationService", () => {
   test("should synchronize transaction successfully", () => {
     // Arrange
-    const service = new TransactionSynchronizationService();
-
     const transaction = {
       transactionId: "TRX-001",
       product: "LPG 11kg",
@@ -13,7 +12,7 @@ describe("TransactionSynchronizationService", () => {
     };
 
     // Act
-    const result = service.synchronize(transaction);
+    const result = synchronizeTransaction(transaction);
 
     // Assert
     expect(result.sent.success).toBe(true);

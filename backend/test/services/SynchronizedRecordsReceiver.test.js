@@ -1,13 +1,11 @@
+//week-day1
 import { describe, test, expect } from "vitest";
-import SynchronizedRecordsReceiver from "../../src/services/SynchronizedRecordsReceiver.js";
+import receiveSynchronizedRecords from "../../src/services/SynchronizedRecordsReceiver.js";
 
-describe("SynchronizedRecordsReceiver", () => {
+describe("receiveSynchronizedRecords", () => {
   test("should receive synchronized records correctly", () => {
-    // Arrange
-    const receiver = new SynchronizedRecordsReceiver();
-
     // Act
-    const records = receiver.receive();
+    const records = receiveSynchronizedRecords();
 
     // Assert
     expect(records).toHaveLength(2);

@@ -1,32 +1,24 @@
 //week3-day1
-import TransactionSynchronizationService from "../services/TransactionSynchronizationService.js";
+import synchronizeTransaction from "../services/TransactionSynchronizationService.js";
 
-class TransactionSynchronizationController {
-  constructor() {
-    this.transactionSynchronizationService =
-      new TransactionSynchronizationService();
-  }
+function synchronizeTransactionController(req, res) {
+  try {
+    const transaction = req.body;
 
-  synchronizeTransaction(req, res) {
-    try {
-      const transaction = req.body;
+    const result = synchronizeTransaction(transaction);
 
-      const result =
-        this.transactionSynchronizationService.synchronize(transaction);
-
-      return res.status(200).json({
-        success: true,
-        message: "Transaction synchronized successfully.",
-        data: result,
-      });
-    } catch (error) {
-      return res.status(500).json({
-        success: false,
-        message: "Transaction synchronization failed.",
-        error: error.message,
-      });
-    }
+    return res.status(200).json({
+      success: true,
+      message: "Transaction synchronized successfully.",
+      data: result,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Transaction synchronization failed.",
+      error: error.message,
+    });
   }
 }
 
-export default new TransactionSynchronizationController();
+export default synchronizeTransactionController;

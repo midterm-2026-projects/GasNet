@@ -1,11 +1,10 @@
+//week3-day1
 import { describe, test, expect } from "vitest";
-import TransactionSynchronizationValidator from "../../src/services/TransactionSynchronizationValidator.js";
+import validateSynchronizedRecords from "../../src/services/TransactionSynchronizationValidator.js";
 
 describe("TransactionSynchronizationValidator", () => {
   test("should validate synchronized transactions accurately", () => {
     // Arrange
-    const validator = new TransactionSynchronizationValidator();
-
     const records = [
       {
         transactionId: "TRX-001",
@@ -22,7 +21,7 @@ describe("TransactionSynchronizationValidator", () => {
     ];
 
     // Act
-    const result = validator.validate(records);
+    const result = validateSynchronizedRecords(records);
 
     // Assert
     expect(result).toBe(true);
