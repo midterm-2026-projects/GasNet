@@ -3,16 +3,18 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-     "dev": "node src/routes/index.js",
-    "start": "node src/routes/index.js",
+     "dev": "node src/index.js",
+    "start": "node src/index.js",
     "test": "vitest",
     "test:watch": "vitest --watch --globals",
     "test:unit": "vitest run --globals",
     "lint": "eslint ."
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.53.0",
     "dotenv": "^17.4.2",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "postgres": "^3.4.9"
   },
   "devDependencies": {
     "eslint": "^10.5.0",
