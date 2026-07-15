@@ -30,3 +30,4 @@ export async function getAllPosTablesData(client = getSupabaseClient()) {
 
   return Object.fromEntries(tableEntries)
 }
+
