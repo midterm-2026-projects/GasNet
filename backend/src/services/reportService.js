@@ -1,34 +1,30 @@
-import mockSalesTransactions from "../data/mockSalesTransactions.js";
-
-function generateSalesReport() {
-  const totalTransactions = mockSalesTransactions.length;
-
-  const totalSales = mockSalesTransactions.reduce(
-    (sum, transaction) => sum + transaction.total,
-    0
-  );
-
-  return {
-    totalTransactions,
-    totalSales,
-    reports: mockSalesTransactions,
-  };
-}
+//4-1
+import { isOnline } from "./internet.js";
+import { generateSalesReport } from "./reportGenerator.js";
+import {
+  saveLocalReport,
+  getLocalReport,
+} from "./reportStorage.js";
+import { validateSalesReport } from "./reportValidator.js";
 
 function getSalesReport() {
-  return generateSalesReport();
+  // Offline
+  if (!isOnline()) {
+    return getLocalReport();
+  }
+
+  // Online
+  const report = generateSalesReport();
+
+  saveLocalReport(report);
+
+  const isValid = validateSalesReport(report);
+
+  if (!isValid) {
+    throw new Error("Sales report validation failed.");
+  }
+
+  return report;
 }
 
-function validateSalesReport(report) {
-  return (
-    report.totalTransactions > 0 &&
-    report.totalSales >= 0 &&
-    Array.isArray(report.reports)
-  );
-}
-
-export {
-  generateSalesReport,
-  getSalesReport,
-  validateSalesReport,
-};
+export { getSalesReport };

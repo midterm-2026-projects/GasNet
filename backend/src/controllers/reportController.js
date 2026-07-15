@@ -1,20 +1,9 @@
-import {
-  getSalesReport,
-  validateSalesReport,
-} from "../services/reportService.js";
+//4-1
+import { getSalesReport } from "../services/reportService.js";
 
 function reportController(req, res) {
   try {
     const report = getSalesReport();
-
-    const isValid = validateSalesReport(report);
-
-    if (!isValid) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid sales report.",
-      });
-    }
 
     res.status(200).json({
       success: true,
@@ -22,6 +11,7 @@ function reportController(req, res) {
       data: report,
     });
   } catch (error) {
+    
     res.status(500).json({
       success: false,
       message: "Failed to generate sales report.",

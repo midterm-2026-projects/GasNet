@@ -1,44 +1,91 @@
-import { describe, it, expect } from "vitest";
+//4-1
+import { describe, it, expect, vi, beforeEach } from "vitest";
 
-import {
-  generateSalesReport,
-  getSalesReport,
-  validateSalesReport,
-} from "../../src/services/reportService.js";
+import { getSalesReport } from "../../src/services/reportService.js";
+
+import * as internet from "../../src/services/internet.js";
+import * as reportGenerator from "../../src/services/reportGenerator.js";
+import * as reportStorage from "../../src/services/reportStorage.js";
+import * as reportValidator from "../../src/services/reportValidator.js";
 
 describe("Report Service", () => {
-  it("should generate sales report successfully", () => {
-    // Arrange
-
-    // Act
-    const report = generateSalesReport();
-
-    // Assert
-    expect(report.totalTransactions).toBe(1);
-    expect(report.totalSales).toBe(950);
-    expect(report.reports.length).toBe(1);
+  beforeEach(() => {
+    vi.restoreAllMocks();
   });
 
-  it("should retrieve sales report successfully", () => {
+  it("should generate and save report when online", () => {
     // Arrange
+    const report = {
+      totalTransactions: 1,
+      totalSales: 950,
+      reports: [],
+    };
+
+    vi.spyOn(internet, "isOnline").mockReturnValue(true);
+
+    vi.spyOn(reportGenerator, "generateSalesReport")
+      .mockReturnValue(report);
+
+    const saveLocalReportSpy = vi.spyOn(
+      reportStorage,
+      "saveLocalReport"
+    );
+
+    vi.spyOn(reportValidator, "validateSalesReport")
+      .mockReturnValue(true);
 
     // Act
-    const report = getSalesReport();
+    const result = getSalesReport();
 
     // Assert
-    expect(report).toHaveProperty("totalTransactions");
-    expect(report).toHaveProperty("totalSales");
-    expect(report).toHaveProperty("reports");
+    expect(result).toEqual(report);
+
+    expect(saveLocalReportSpy).toHaveBeenCalledTimes(1);
+
+    expect(saveLocalReportSpy).toHaveBeenCalledWith(report);
   });
 
-  it("should validate sales report successfully", () => {
+  it("should return cached report when offline", () => {
     // Arrange
-    const report = generateSalesReport();
+    const cachedReport = {
+      totalTransactions: 1,
+      totalSales: 950,
+      reports: [],
+    };
+
+    vi.spyOn(internet, "isOnline").mockReturnValue(false);
+
+    vi.spyOn(reportStorage, "getLocalReport")
+      .mockReturnValue(cachedReport);
 
     // Act
-    const result = validateSalesReport(report);
+    const result = getSalesReport();
 
     // Assert
-    expect(result).toBe(true);
+    expect(result).toEqual(cachedReport);
+  });
+
+  it("should throw an error when report validation fails", () => {
+    // Arrange
+    const report = {
+      totalTransactions: 1,
+      totalSales: 950,
+      reports: [],
+    };
+
+    vi.spyOn(internet, "isOnline").mockReturnValue(true);
+
+    vi.spyOn(reportGenerator, "generateSalesReport")
+      .mockReturnValue(report);
+
+    vi.spyOn(reportStorage, "saveLocalReport");
+
+    vi.spyOn(reportValidator, "validateSalesReport")
+      .mockReturnValue(false);
+
+    // Act & Assert
+    expect(() => getSalesReport()).toThrow(
+      "Sales report validation failed."
+    );
   });
 });
