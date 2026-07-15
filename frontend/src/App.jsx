@@ -8,6 +8,7 @@ function App() {
   return (
     <><TransactionSynchronizationInterface />,
       <InventoryMonitoringInterface/>,
+      //<CrossDeviceReportsInterface/>
     </>
   );
 }

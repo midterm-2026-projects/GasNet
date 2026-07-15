@@ -4,6 +4,7 @@ import salesAnalyticsRouter from "./routes/salesAnalytics.js";
 import branchPerformanceAnalysisRouter from "./routes/branchPerformanceAnalysis.js";
 import transactionSynchronizationRoutes from "./routes/transactionSynchronizationRoutes.js";
 import inventoryRouter from "./routes/inventory.js";
+import reportRouter from "./routes/report.js";
 import supabaseTablesRouter from "./routes/supabaseTables.js";
 const app = express();
 
@@ -24,5 +25,6 @@ app.use("/api", inventoryRouter);
 app.use("/api", transactionSynchronizationRoutes);
 app.use("/api", supabaseTablesRouter);
 
+app.use("/api", reportRouter);
 
 export default app;
