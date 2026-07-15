@@ -18,6 +18,11 @@ function getSupabaseEnvironment() {
 }
 
 export function getSupabaseClient() {
+  // During test discovery env vars may be missing; avoid throwing on import.
+  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    return null
+  }
+
   if (!cachedClient) {
     const { supabaseUrl, serviceRoleKey } = getSupabaseEnvironment()
     cachedClient = createClient(supabaseUrl, serviceRoleKey, {
@@ -34,3 +39,5 @@ export function getSupabaseClient() {
 export function resetSupabaseClientForTests() {
   cachedClient = undefined
 }
+
+

@@ -1,10 +1,19 @@
-import dotenv from "dotenv";
-import app from "./app.js";
+import express from 'express'
+import syncRouter from './routes/syncStatus.js'
+import salesAnalyticsRouter from './routes/salesAnalytics.js'
+import branchPerformanceAnalysisRouter from './routes/branchPerformanceAnalysis.js'
+import supabaseTablesRouter from './routes/supabaseTables.js'
 
-dotenv.config();
+const app = express()
+app.use(express.json())
+app.use('/api', syncRouter)
+app.use('/api', salesAnalyticsRouter)
+app.use('/api', branchPerformanceAnalysisRouter)
+app.use('/api', supabaseTablesRouter)
 
-const PORT = process.env.PORT || 3001;
+if (process.env.NODE_ENV !== 'test') {
+  const port = process.env.PORT || 3001
+  app.listen(port, () => console.log(`Server listening on ${port}`))
+}
 
-app.listen(PORT, () => {
-  console.log(`GasNet Backend Server is running on port ${PORT}`);
-});
+export default app
