@@ -8,6 +8,10 @@ import reportRouter from "./routes/report.js";
 import alertRoutes from "./routes/alertRoutes.js";
 import analyticsDashboardRouter from "./routes/analyticsDashboard.js";
 import supabaseTablesRouter from "./routes/supabaseTables.js";
+
+
+import syncRoutes from "./routes/sync.js";
+
 const app = express();
 
 app.use(express.json());
@@ -31,4 +35,10 @@ app.use("/api/alerts", alertRoutes);
 app.use("/api", analyticsDashboardRouter);
 app.use("/api", supabaseTablesRouter);
 
+app.use("/api", reportRouter);
+app.use("/api/alerts", alertRoutes);
+
+app.use("/api/sync", syncRoutes);
+
 export default app;
+
