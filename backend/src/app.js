@@ -11,6 +11,7 @@ import supabaseTablesRouter from "./routes/supabaseTables.js";
 
 
 import syncRoutes from "./routes/sync.js";
+import reportAlertRoutes from "./routes/reportAlert.js";
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use("/api", reportRouter);
 app.use("/api/alerts", alertRoutes);
 
 app.use("/api/sync", syncRoutes);
+app.use("/api/report-alert", reportAlertRoutes);
 
 export default app;
 
