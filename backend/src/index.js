@@ -3,6 +3,7 @@ import syncRouter from './routes/syncStatus.js'
 import salesAnalyticsRouter from './routes/salesAnalytics.js'
 import branchPerformanceAnalysisRouter from './routes/branchPerformanceAnalysis.js'
 import supabaseTablesRouter from './routes/supabaseTables.js'
+import analyticsDashboardRouter from './routes/analyticsDashboard.js'
 
 const app = express()
 app.use(express.json())
@@ -10,6 +11,7 @@ app.use('/api', syncRouter)
 app.use('/api', salesAnalyticsRouter)
 app.use('/api', branchPerformanceAnalysisRouter)
 app.use('/api', supabaseTablesRouter)
+app.use('/api', analyticsDashboardRouter)
 
 if (process.env.NODE_ENV !== 'test') {
   const port = process.env.PORT || 3001
