@@ -7,6 +7,9 @@ import inventoryRouter from "./routes/inventory.js";
 import reportRouter from "./routes/report.js";
 import supabaseTablesRouter from "./routes/supabaseTables.js";
 import alertRoutes from "./routes/alertRoutes.js";
+
+import syncRoutes from "./routes/sync.js";
+
 const app = express();
 
 app.use(express.json());
@@ -28,5 +31,7 @@ app.use("/api", supabaseTablesRouter);
 
 app.use("/api", reportRouter);
 app.use("/api/alerts", alertRoutes);
+
+app.use("/api/sync", syncRoutes);
 
 export default app;
