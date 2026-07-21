@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-     "dev": "node src/index.js",
+    "dev": "node src/index.js",
     "start": "node src/index.js",
     "test": "vitest",
     "test:watch": "vitest --watch --globals",
@@ -19,6 +19,6 @@
   "devDependencies": {
     "eslint": "^10.5.0",
     "supertest": "^6.3.3",
-    "vitest": "^4.1.9"
+    "vitest": "^3.0.0"
   }
 }

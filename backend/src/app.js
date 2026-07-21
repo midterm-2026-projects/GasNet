@@ -5,7 +5,7 @@ import branchPerformanceAnalysisRouter from "./routes/branchPerformanceAnalysis.
 import transactionSynchronizationRoutes from "./routes/transactionSynchronizationRoutes.js";
 import inventoryRouter from "./routes/inventory.js";
 import reportRouter from "./routes/report.js";
-import supabaseTablesRouter from "./routes/supabaseTables.js";
+import analyticsDashboardRouter from "./routes/analyticsDashboard.js";
 const app = express();
 
 app.use(express.json());
@@ -23,8 +23,8 @@ app.use("/api", transactionSynchronizationRoutes);
 app.use("/api", inventoryRouter);
 
 app.use("/api", transactionSynchronizationRoutes);
-app.use("/api", supabaseTablesRouter);
 
 app.use("/api", reportRouter);
+app.use("/api", analyticsDashboardRouter);
 
 export default app;
