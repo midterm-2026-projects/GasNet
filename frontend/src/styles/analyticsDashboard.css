@@ -1,0 +1,316 @@
+.analytics-dashboard {
+  padding: 24px;
+  flex: 1;
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.dashboard-header .subtitle {
+  color: #64748b;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+/* Overview Metrics */
+.overview-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.metric-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s;
+}
+
+.metric-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.metric-card .metric-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.metric-card .metric-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.metric-card .metric-sub {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.metric-card .metric-sub.positive {
+  color: #16a34a;
+}
+
+.metric-card .metric-sub.warning {
+  color: #d97706;
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.dashboard-section h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 16px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.dashboard-section h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin: 12px 0 8px 0;
+}
+
+/* AI Insight Cards */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.insight-card {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  transition: border-color 0.2s;
+}
+
+.insight-card:hover {
+  border-color: #94a3b8;
+}
+
+.insight-card .insight-type {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.insight-card .insight-type.positive {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.insight-card .insight-type.info {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.insight-card .insight-type.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.insight-card .insight-text {
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.insight-card .insight-recommendation {
+  font-size: 12px;
+  color: #475569;
+  background: #f8fafc;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border-left: 3px solid #3b82f6;
+  margin-bottom: 8px;
+}
+
+.insight-card .insight-trend {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Sales Analytics Reports */
+.analytics-reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.analytics-report-card {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.analytics-report-card h4 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 0 0 8px 0;
+}
+
+.analytics-report-card .report-stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  font-size: 13px;
+}
+
+.analytics-report-card .report-stat .stat-label {
+  color: #64748b;
+}
+
+.analytics-report-card .report-stat .stat-value {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* Branch Performance */
+.branch-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.branch-table th {
+  text-align: left;
+  padding: 10px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.branch-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.branch-table tr:hover td {
+  background: #f8fafc;
+}
+
+.status-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.status-badge.achieved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.on-track {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-badge.needs-attention {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Loading & Error States */
+.dashboard-loading,
+.dashboard-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  font-size: 16px;
+  color: #64748b;
+}
+
+.dashboard-error {
+  color: #dc2626;
+}
+
+/* Recommendations Section */
+.recommendations-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recommendations-list li {
+  padding: 10px 14px;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border-left: 3px solid #3b82f6;
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.recommendations-list li::before {
+  content: '→';
+  margin-right: 8px;
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .analytics-dashboard {
+    padding: 16px;
+  }
+  .overview-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+  .analytics-reports-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

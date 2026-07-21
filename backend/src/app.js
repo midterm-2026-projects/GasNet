@@ -5,8 +5,10 @@ import branchPerformanceAnalysisRouter from "./routes/branchPerformanceAnalysis.
 import transactionSynchronizationRoutes from "./routes/transactionSynchronizationRoutes.js";
 import inventoryRouter from "./routes/inventory.js";
 import reportRouter from "./routes/report.js";
-import supabaseTablesRouter from "./routes/supabaseTables.js";
 import alertRoutes from "./routes/alertRoutes.js";
+import analyticsDashboardRouter from "./routes/analyticsDashboard.js";
+import supabaseTablesRouter from "./routes/supabaseTables.js";
+
 
 import syncRoutes from "./routes/sync.js";
 
@@ -27,6 +29,10 @@ app.use("/api", transactionSynchronizationRoutes);
 app.use("/api", inventoryRouter);
 
 app.use("/api", transactionSynchronizationRoutes);
+
+app.use("/api", reportRouter);
+app.use("/api/alerts", alertRoutes);
+app.use("/api", analyticsDashboardRouter);
 app.use("/api", supabaseTablesRouter);
 
 app.use("/api", reportRouter);
@@ -35,3 +41,4 @@ app.use("/api/alerts", alertRoutes);
 app.use("/api/sync", syncRoutes);
 
 export default app;
+
