@@ -12,6 +12,7 @@ import supabaseTablesRouter from "./routes/supabaseTables.js";
 
 import syncRoutes from "./routes/sync.js";
 import reportAlertRoutes from "./routes/reportAlert.js";
+import systemValidationRoutes from "./routes/systemValidation.js";
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.use("/api/alerts", alertRoutes);
 
 app.use("/api/sync", syncRoutes);
 app.use("/api/report-alert", reportAlertRoutes);
+app.use("/api/system-validation", systemValidationRoutes);
 
 export default app;
 
